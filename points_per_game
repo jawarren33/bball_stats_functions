@@ -1,0 +1,15 @@
+def calculate_points_per_game(total_points, total_games):
+    """
+    Calculate the points per game for a basketball player.
+
+    Args:
+        total_points: Total number of points scored.
+        total_games: Total number of games played.
+
+    Returns:
+        Points per game as a decimal.
+    """
+    if total_games > 0:
+        return total_points / total_games
+    else:
+        return 0.0
