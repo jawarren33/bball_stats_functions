@@ -1,0 +1,15 @@
+def calculate_field_goal_percentage(made_shots, attempted_shots):
+    """
+    Calculate the field goal percentage for a basketball player.
+
+    Args:
+        made_shots: Number of made shots.
+        attempted_shots: Number of attempted shots.
+
+    Returns:
+        Field goal percentage as a decimal.
+    """
+    if attempted_shots > 0:
+        return made_shots / attempted_shots
+    else:
+        return 0.0
