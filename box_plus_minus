@@ -1,0 +1,16 @@
+def calculate_box_plus_minus(offensive_rating, defensive_rating, league_offensive_rating, league_defensive_rating):
+    """
+    Calculate the Box Plus/Minus (BPM) for an NBA player.
+
+    Args:
+        offensive_rating: Offensive Rating of the player.
+        defensive_rating: Defensive Rating of the player.
+        league_offensive_rating: League average Offensive Rating.
+        league_defensive_rating: League average Defensive Rating.
+
+    Returns:
+        Box Plus/Minus (BPM).
+    """
+    bpm = offensive_rating - defensive_rating + (league_offensive_rating - league_defensive_rating)
+
+    return bpm
