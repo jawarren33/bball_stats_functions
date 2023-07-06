@@ -1,0 +1,22 @@
+def calculate_vorp(box_plus_minus, minutes_played, team_minutes_played, league_minutes_played, replacement_level):
+    """
+    Calculate the Value Over Replacement Player (VORP) for an NBA player.
+
+    Args:
+        box_plus_minus: Box Plus/Minus (BPM) of the player.
+        minutes_played: Total minutes played by the player.
+        team_minutes_played: Total minutes played by the team.
+        league_minutes_played: Total minutes played in the league.
+        replacement_level: Value for replacement-level player (typically around -2 to -3 BPM).
+
+    Returns:
+        Value Over Replacement Player (VORP).
+    """
+    try:
+        player_minutes_weight = minutes_played / team_minutes_played
+        league_minutes_weight = minutes_played / league_minutes_played
+        vorp = (box_plus_minus - replacement_level) * player_minutes_weight / league_minutes_weight
+    except ZeroDivisionError:
+        vorp = 0.0
+
+    return vorp
