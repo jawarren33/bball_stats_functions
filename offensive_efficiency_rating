@@ -1,0 +1,20 @@
+def calculate_offensive_efficiency_rating(points, field_goals_attempted, free_throws_attempted, assists, turnovers):
+    """
+    Calculate the Offensive Efficiency Rating for an NBA player.
+
+    Args:
+        points: Total points scored by the player.
+        field_goals_attempted: Total field goals attempted by the player.
+        free_throws_attempted: Total free throws attempted by the player.
+        assists: Total assists by the player.
+        turnovers: Total turnovers by the player.
+
+    Returns:
+        Offensive Efficiency Rating.
+    """
+    try:
+        efficiency_rating = (points + assists) / (field_goals_attempted + 0.44 * free_throws_attempted + assists + turnovers) * 100
+    except ZeroDivisionError:
+        efficiency_rating = 0.0
+
+    return efficiency_rating
