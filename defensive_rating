@@ -1,0 +1,21 @@
+def calculate_defensive_rating(opponent_points, opponent_field_goals_attempted, opponent_free_throws_attempted, steals, blocks, team_minutes_played):
+    """
+    Calculate the Defensive Rating for an NBA player.
+
+    Args:
+        opponent_points: Total points scored by opponents.
+        opponent_field_goals_attempted: Total field goals attempted by opponents.
+        opponent_free_throws_attempted: Total free throws attempted by opponents.
+        steals: Total steals by the player.
+        blocks: Total blocks by the player.
+        team_minutes_played: Total minutes played by the team.
+
+    Returns:
+        Defensive Rating.
+    """
+    try:
+        defensive_rating = (opponent_points / opponent_field_goals_attempted) * 100 - (opponent_free_throws_attempted / team_minutes_played) * (steals + blocks)
+    except ZeroDivisionError:
+        defensive_rating = 0.0
+
+    return defensive_rating
