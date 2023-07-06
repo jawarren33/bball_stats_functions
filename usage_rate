@@ -1,0 +1,22 @@
+def calculate_usage_rate(field_goals_attempted, free_throws_attempted, turnovers, team_field_goals_attempted, team_free_throws_attempted, team_turnovers):
+    """
+    Calculate the Usage Rate (USG%) for an NBA player.
+
+    Args:
+        field_goals_attempted: Total field goals attempted by the player.
+        free_throws_attempted: Total free throws attempted by the player.
+        turnovers: Total turnovers by the player.
+        team_field_goals_attempted: Total field goals attempted by the team.
+        team_free_throws_attempted: Total free throws attempted by the team.
+        team_turnovers: Total turnovers by the team.
+
+    Returns:
+        Usage Rate (USG%).
+    """
+    try:
+        usg_percentage = 100 * (field_goals_attempted + 0.44 * free_throws_attempted + turnovers)
+        usg_percentage /= (team_field_goals_attempted + 0.44 * team_free_throws_attempted + team_turnovers)
+    except ZeroDivisionError:
+        usg_percentage = 0.0
+
+    return usg_percentage
