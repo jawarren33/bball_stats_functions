@@ -1,0 +1,19 @@
+def calculate_true_shooting_percentage(points, field_goals_attempted, free_throws_attempted):
+    """
+    Calculate the True Shooting Percentage (TS%) for an NBA player.
+
+    Args:
+        points: Total points scored.
+        field_goals_attempted: Total field goals attempted.
+        free_throws_attempted: Total free throws attempted.
+
+    Returns:
+        True Shooting Percentage (TS%).
+    """
+    try:
+        ts_percentage = points / (2 * (field_goals_attempted + 0.44 * free_throws_attempted))
+    except ZeroDivisionError:
+        ts_percentage = 0.0
+
+    return ts_percentage
+
