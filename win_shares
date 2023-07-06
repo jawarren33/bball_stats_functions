@@ -1,0 +1,19 @@
+def calculate_win_shares(minutes_played, team_minutes_played, team_wins):
+    """
+    Calculate the Win Shares (WS) for an NBA player.
+
+    Args:
+        minutes_played: Total minutes played by the player.
+        team_minutes_played: Total minutes played by the team.
+        team_wins: Total wins by the team.
+
+    Returns:
+        Win Shares (WS).
+    """
+    try:
+        minutes_weight = minutes_played / team_minutes_played
+        win_shares = minutes_weight * team_wins
+    except ZeroDivisionError:
+        win_shares = 0.0
+
+    return win_shares
