@@ -1,0 +1,15 @@
+def calculate_free_throw_percentage(made_free_throws, attempted_free_throws):
+    """
+    Calculate the free throw percentage for a basketball player.
+
+    Args:
+        made_free_throws: Number of made free throws.
+        attempted_free_throws: Number of attempted free throws.
+
+    Returns:
+        Free throw percentage as a decimal.
+    """
+    if attempted_free_throws > 0:
+        return made_free_throws / attempted_free_throws
+    else:
+        return 0.0
