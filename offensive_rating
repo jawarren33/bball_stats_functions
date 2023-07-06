@@ -1,0 +1,25 @@
+def calculate_offensive_rating(points, field_goals_made, field_goals_attempted, free_throws_made, free_throws_attempted, assists, turnovers, team_points, team_possessions):
+    """
+    Calculate the Offensive Rating for an NBA player.
+
+    Args:
+        points: Total points scored by the player.
+        field_goals_made: Total field goals made by the player.
+        field_goals_attempted: Total field goals attempted by the player.
+        free_throws_made: Total free throws made by the player.
+        free_throws_attempted: Total free throws attempted by the player.
+        assists: Total assists by the player.
+        turnovers: Total turnovers by the player.
+        team_points: Total points scored by the team.
+        team_possessions: Total team possessions.
+
+    Returns:
+        Offensive Rating.
+    """
+    try:
+        player_possessions = field_goals_attempted + 0.44 * free_throws_attempted + assists + turnovers
+        offensive_rating = (points / player_possessions) * (team_possessions / team_points) * 100
+    except ZeroDivisionError:
+        offensive_rating = 0.0
+
+    return offensive_rating
