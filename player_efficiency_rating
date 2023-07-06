@@ -1,0 +1,29 @@
+def calculate_player_efficiency_rating(points, rebounds, assists, steals, blocks, turnovers, field_goals_made, free_throws_made, minutes_played):
+    """
+    Calculate the Player Efficiency Rating (PER) for an NBA player.
+
+    Args:
+        points: Total points scored.
+        rebounds: Total rebounds.
+        assists: Total assists.
+        steals: Total steals.
+        blocks: Total blocks.
+        turnovers: Total turnovers.
+        field_goals_made: Total field goals made.
+        free_throws_made: Total free throws made.
+        minutes_played: Total minutes played.
+
+    Returns:
+        Player Efficiency Rating (PER).
+    """
+    # Calculate the basic PER formula
+    try:
+        per = (points + rebounds + assists + steals + blocks) - (field_goals_made + free_throws_made - turnovers)
+        per /= minutes_played
+        per *= (15 / league_average_per)
+    except ZeroDivisionError:
+        per = 0.0
+
+    return per
+
+
