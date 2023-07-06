@@ -1,0 +1,19 @@
+def calculate_defensive_efficiency_rating(steals, blocks, opponent_points, opponent_field_goals_attempted):
+    """
+    Calculate the Defensive Efficiency Rating for an NBA player.
+
+    Args:
+        steals: Total steals by the player.
+        blocks: Total blocks by the player.
+        opponent_points: Total points scored by opponents.
+        opponent_field_goals_attempted: Total field goals attempted by opponents.
+
+    Returns:
+        Defensive Efficiency Rating.
+    """
+    try:
+        efficiency_rating = (opponent_points / opponent_field_goals_attempted) * (steals + blocks)
+    except ZeroDivisionError:
+        efficiency_rating = 0.0
+
+    return efficiency_rating
